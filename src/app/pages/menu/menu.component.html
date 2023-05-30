@@ -1,1 +1,13 @@
-<p>menu works!</p>
+<div class="content">
+
+    <app-pagination [letter]="letter" [sendLetter]="getLetterByPagination"></app-pagination>
+
+    <div class="cards_container">
+
+        <app-item [drink]="drink" *ngFor="let drink of drinks"></app-item>
+
+    </div>
+
+    <app-pagination [letter]="letter" [sendLetter]="getLetterByPagination" style="padding-bottom: 26px;"></app-pagination>
+
+</div>

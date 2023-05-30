@@ -1,0 +1,28 @@
+.content_pagination{
+    margin: 20px 0;
+
+    .title {
+        display: flex;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 22px;
+        padding-bottom: 10px;
+        color: #475751;
+    }
+    
+    .pagination{
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 500;
+        font-size: 22px;
+    
+        span{
+            cursor: pointer;
+        }
+    
+        .active{
+            color: #A1DBC3;
+        }
+    }
+}

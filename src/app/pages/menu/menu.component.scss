@@ -1,0 +1,11 @@
+.content {
+    background-color: #EFECE5;
+    overflow: auto;
+
+    .cards_container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}

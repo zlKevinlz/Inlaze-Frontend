@@ -1,0 +1,18 @@
+.footer_content {
+    background-color: #475751;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    font-size: 18px;
+    font-weight: 500;
+
+    .menu_footer {
+        display: flex;
+        gap: 15px;
+
+        span {
+            cursor: pointer;
+        }
+    }
+}

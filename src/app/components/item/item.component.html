@@ -1,1 +1,11 @@
-<p>item works!</p>
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front" [style.background-image]="'url(' + drink.strDrinkThumb + ')'">
+            <p class="title_front">{{drink.strDrink | titlecase}}</p>
+        </div>
+        <div class="flip-card-back">
+            <p class="drink_category">{{drink.strAlcoholic}}</p>
+            <p class="drink_description">{{drink.strCategory}}</p>
+        </div>
+    </div>
+</div>
