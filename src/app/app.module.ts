@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MenuModule } from './pages/menu/menu.module';
-import { HomeModule } from './pages/home/home.module';
 
 
 @NgModule({
@@ -26,8 +25,7 @@ import { HomeModule } from './pages/home/home.module';
     RouterModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MenuModule,
-    HomeModule
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

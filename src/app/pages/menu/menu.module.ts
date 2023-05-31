@@ -12,6 +12,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DrinkDetailComponent } from 'src/app/components/drink-detail/drink-detail.component';
 import {MatIconModule} from '@angular/material/icon';
 import { DrinksByIngredientComponent } from 'src/app/components/drinks-by-ingredient/drinks-by-ingredient.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DrinksByIngredientComponent } from 'src/app/components/drinks-by-ingred
     MenuRoutingModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    NgxSkeletonLoaderModule
   ]
 })
 export class MenuModule { }

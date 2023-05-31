@@ -2,6 +2,9 @@
     background-color: #EFECE5;
     overflow: auto;
     min-height: calc(100% - 270px);
+    background-image: url("../../../assets/Lineas-fondo.png");
+    background-repeat: no-repeat;
+    background-position: center;
 
     .cards_container {
         display: flex;

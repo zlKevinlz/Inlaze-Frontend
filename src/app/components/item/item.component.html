@@ -1,6 +1,12 @@
 <div class="flip-card" (click)="openDetail()">
     <div class="flip-card-inner">
-        <div class="flip-card-front" [style.background-image]="'url(' + drink.strDrinkThumb + ')'">
+        <div class="flip-card-front">
+            <img [ngClass]="!drink.ready ? 'hidden' : ''" (load)="imageReady()" [src]="drink.strDrinkThumb" alt="">
+
+            <ngx-skeleton-loader appearance="circle" [theme]="{width: '100%', height: '249px', margin: '0', 'border-radius': '1rem'}"
+                *ngIf="!drink.ready">
+            </ngx-skeleton-loader>
+
             <p class="title_front">{{drink.strDrink | titlecase}}</p>
         </div>
         <div class="flip-card-back">

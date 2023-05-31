@@ -2,8 +2,7 @@ import { Component, Input } from '@angular/core';
 import { DrinkDetailComponent } from '../drink-detail/drink-detail.component';
 
 
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import { DrinksByIngredientComponent } from '../drinks-by-ingredient/drinks-by-ingredient.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-item',
@@ -23,9 +22,13 @@ export class ItemComponent {
   ngOnInit(): void {
   }
 
+  imageReady() {
+      this.drink.ready = true;
+  }
+
   openDetail(){
     this.dialog.closeAll();
-    this.dialog.open(DrinkDetailComponent, {
+    this.dialog.open(DrinkDetailComponent , {
       width: '85%',
       height: 'auto',
       minHeight: '44%',
