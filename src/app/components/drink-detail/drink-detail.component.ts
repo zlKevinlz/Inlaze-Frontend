@@ -26,7 +26,7 @@ export class DrinkDetailComponent {
     private _drinkService: DrinkService
   ) {
     this._unsubscribeAll = new Subject();
-    console.log(this.data)
+
     if(this.data.searchById){
       this.getDrinksById();
     }
@@ -40,10 +40,12 @@ export class DrinkDetailComponent {
     this.loading = true;
     this._drinkService.getDrinkById(this.data.drink.idDrink).pipe(takeUntil(this._unsubscribeAll)).subscribe((response: any) => {
       this.data.drink = response.drinks[0];
+      
       this.loading = false;
     }, (error) => {
-      //modal con mensaje de error
+      alert('An error has occurred');
       this.loading = false;
+      this.closeDialog();
     });
   }
 

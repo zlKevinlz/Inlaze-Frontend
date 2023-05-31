@@ -37,14 +37,16 @@ export class MenuComponent {
     this._drinkService.listDrinks(this.letter).pipe(takeUntil(this._unsubscribeAll)).subscribe((response: any) => {
       if(response.drinks != null){
         this.drinks = response.drinks;
-        console.log(this.drinks)
       }else{
+        alert('An error has occurred');
         this.noResults = true;
+        location.reload();
       }
       this.loading = false;
     }, (error) => {
-      //modal con mensaje de error
+      alert('An error has occurred');
       this.loading = false;
+      location.reload();
     });
   }
 

@@ -39,12 +39,12 @@ export class DrinksByIngredientComponent {
     this._drinkService.searchDrinksByIngredient(ingredient).pipe(takeUntil(this._unsubscribeAll)).subscribe((response: any) => {
       if(response.drinks != null){
         this.drinksByIngredient = response.drinks;
-        console.log(this.drinksByIngredient)
       }
       this.loading = false;
     }, (error) => {
-      //modal con mensaje de error
+      alert('An error has occurred');
       this.loading = false;
+      this.closeDialog();
     });
   }
 }
