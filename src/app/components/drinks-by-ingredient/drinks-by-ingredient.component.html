@@ -1,0 +1,18 @@
+<div class="main_container" *ngIf="!loading">
+    <div class="header">
+        <span class="title">Drinks with {{this.data.ingredient}}</span>
+    
+        <mat-icon class="close_icon" fontIcon="close" (click)="closeDialog()"></mat-icon>
+    </div>
+
+    <div class="cards_container" *ngIf="!loading">
+
+        <app-item [drink]="drink" *ngFor="let drink of drinksByIngredient"></app-item>
+
+    </div>
+
+</div>
+
+<div class="spinner_container" *ngIf="loading">
+    <mat-spinner class="custom-spinner"></mat-spinner>
+</div>

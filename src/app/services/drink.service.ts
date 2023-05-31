@@ -13,6 +13,13 @@ export class DrinkService {
 
   listDrinks(letter: string){
     return this._httpClient.get(`${environment.APIURL}/search.php?f=${letter}`);
-    //return this._httpClient.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`);
+  }
+
+  searchDrinksByIngredient(ingredient: string){
+    return this._httpClient.get(`${environment.APIURL}/filter.php?i=${ingredient}`);
+  }
+
+  getDrinkById(id: string){
+    return this._httpClient.get(`${environment.APIURL}/lookup.php?i=${id}`);
   }
 }

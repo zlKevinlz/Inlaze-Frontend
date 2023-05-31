@@ -1,0 +1,106 @@
+.main_container {
+    background-color: #EFECE5;
+    padding: 22px;
+
+    .header {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+
+        .title {
+            font-size: 30px;
+            font-weight: 600;
+            color: #475751;
+        }
+
+        .close_icon {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            font-size: 35px;
+            height: 35px;
+            width: 35px;
+            color: red;
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+
+        .flip-card-front {
+            width: 190px;
+            height: 254px;
+            box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border: 1px solid #475751;
+            border-radius: 1rem;
+            background-position: center;
+            background-size: cover;
+            background-repeat: none;
+            color: white;
+        }
+
+        .information {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .advice {
+                font-size: 12px;
+                color: #457261;
+                text-align: center;
+            }
+
+        }
+    }
+
+    .instructions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .subtitle {
+        padding-bottom: 5px;
+        padding-top: 10px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #475751;
+    }
+
+    .text {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .ingredient { 
+        cursor: pointer;
+    }
+}
+
+.spinner_container {
+    display: flex;
+    align-items: center;
+    height: calc(100% - 100px);
+    padding: 50px;
+    justify-content: center;
+    background-color: #EFECE5;
+}
+
+@media (max-width: 600px) {
+    .content {
+        grid-template-columns: repeat(1, 1fr) !important;
+        padding: 10px !important;
+    }
+
+    .flip-card-front{
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}

@@ -2,10 +2,17 @@
 
     <app-pagination [letter]="letter" [sendLetter]="getLetterByPagination"></app-pagination>
 
-    <div class="cards_container">
+    <div class="cards_container" *ngIf="!loading">
 
         <app-item [drink]="drink" *ngFor="let drink of drinks"></app-item>
 
+    </div>
+
+    <div class="spinner_container" >
+
+        <mat-spinner *ngIf="loading" class="custom-spinner"></mat-spinner>
+
+        <div class="no_results" *ngIf="noResults">No results found</div>
     </div>
 
     <app-pagination [letter]="letter" [sendLetter]="getLetterByPagination" style="padding-bottom: 26px;"></app-pagination>

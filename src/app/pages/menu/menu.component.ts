@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, map, takeUntil } from 'rxjs';
+import { DrinkInterface } from 'src/app/models/drink-interface';
 import { DrinkService } from 'src/app/services/drink.service';
 
 @Component({
@@ -9,14 +10,18 @@ import { DrinkService } from 'src/app/services/drink.service';
 })
 export class MenuComponent {
 
-  drinks: Array<any> = [];
+  drinks: DrinkInterface[] = [];
 
   letter: string = 'A';
+
+  loading: boolean = true;
+
+  noResults: boolean = false;
 
   private _unsubscribeAll: Subject<any>;
 
   constructor(
-    private _drinkService: DrinkService,
+    private _drinkService: DrinkService
   ){
     this._unsubscribeAll = new Subject();
   }
@@ -26,13 +31,20 @@ export class MenuComponent {
   }
 
   getDrinksByLetter(){
+    this.noResults = false;
+    this.loading = true;
+    this.drinks = [];
     this._drinkService.listDrinks(this.letter).pipe(takeUntil(this._unsubscribeAll)).subscribe((response: any) => {
-      console.log(response)
-      this.drinks = response.drinks;
-      //this.spinner.hide();
+      if(response.drinks != null){
+        this.drinks = response.drinks;
+        console.log(this.drinks)
+      }else{
+        this.noResults = true;
+      }
+      this.loading = false;
     }, (error) => {
-      //this.message = 'Ha ocurrido un error';
-      //this.clearAlert();
+      //modal con mensaje de error
+      this.loading = false;
     });
   }
 
@@ -40,6 +52,5 @@ export class MenuComponent {
     this.letter = letter;
     this.getDrinksByLetter();
   }
-
 
 }

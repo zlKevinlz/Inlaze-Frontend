@@ -1,4 +1,4 @@
-<div class="flip-card">
+<div class="flip-card" (click)="openDetail()">
     <div class="flip-card-inner">
         <div class="flip-card-front" [style.background-image]="'url(' + drink.strDrinkThumb + ')'">
             <p class="title_front">{{drink.strDrink | titlecase}}</p>

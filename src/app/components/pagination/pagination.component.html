@@ -4,7 +4,8 @@
     </span>
     
     <div class="pagination">
-    
+        
         <span *ngFor="let letter of alphabet ; let index = index" (click)="sendLetter(letter.letter); setActive(index)" [ngClass]="letter.active ? 'active' : ''">{{letter.letter}}</span>
+    
     </div>
 </div>

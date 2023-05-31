@@ -1,6 +1,7 @@
 .content {
     background-color: #EFECE5;
     overflow: auto;
+    min-height: calc(100% - 270px);
 
     .cards_container {
         display: flex;
@@ -8,4 +9,21 @@
         flex-wrap: wrap;
     }
 
+    .spinner_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100% - 370px) !important;
+
+        .no_results{
+            font-size: 26px;
+            font-weight: 500;
+            color: #A1DBC3;
+        }
+    }
+
+}
+
+:host ::ng-deep .custom-spinner circle{   
+    stroke: #A1DBC3;
 }

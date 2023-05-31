@@ -1,0 +1,46 @@
+<div class="main_container" *ngIf="!loading">
+    <div class="header">
+        <span class="title">{{this.data.drink.strDrink}}</span>
+    
+        <mat-icon class="close_icon" fontIcon="close" (click)="closeDialog()"></mat-icon>
+    </div>
+    
+    
+    <div class="content">
+        <div class="flip-card-front" [style.background-image]="'url(' + this.data.drink.strDrinkThumb + ')'">
+            
+        </div>
+    
+        <div class="information">
+            <span class="subtitle">{{this.data.drink.strAlcoholic}}</span>
+            <span class="subtitle">Category:</span>
+            <span class="text">{{this.data.drink.strCategory}}</span>
+            <span class="subtitle">Ingredients:</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient1" (click)="searchByIngredient(this.data.drink.strIngredient1)">{{this.data.drink.strIngredient1}} ({{this.data.drink.strMeasure1}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient2" (click)="searchByIngredient(this.data.drink.strIngredient2)">{{this.data.drink.strIngredient2}} ({{this.data.drink.strMeasure2}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient3" (click)="searchByIngredient(this.data.drink.strIngredient3)">{{this.data.drink.strIngredient3}} ({{this.data.drink.strMeasure3}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient4" (click)="searchByIngredient(this.data.drink.strIngredient4)">{{this.data.drink.strIngredient4}} ({{this.data.drink.strMeasure4}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient5" (click)="searchByIngredient(this.data.drink.strIngredient5)">{{this.data.drink.strIngredient5}} ({{this.data.drink.strMeasure5}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient6" (click)="searchByIngredient(this.data.drink.strIngredient6)">{{this.data.drink.strIngredient6}} ({{this.data.drink.strMeasure6}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient7" (click)="searchByIngredient(this.data.drink.strIngredient7)">{{this.data.drink.strIngredient7}} ({{this.data.drink.strMeasure7}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient8" (click)="searchByIngredient(this.data.drink.strIngredient8)">{{this.data.drink.strIngredient8}} ({{this.data.drink.strMeasure8}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient9" (click)="searchByIngredient(this.data.drink.strIngredient9)">{{this.data.drink.strIngredient9}} ({{this.data.drink.strMeasure9}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient10" (click)="searchByIngredient(this.data.drink.strIngredient10)">{{this.data.drink.strIngredient10}} ({{this.data.drink.strMeasure10}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient11" (click)="searchByIngredient(this.data.drink.strIngredient11)">{{this.data.drink.strIngredient11}} ({{this.data.drink.strMeasure11}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient12" (click)="searchByIngredient(this.data.drink.strIngredient12)">{{this.data.drink.strIngredient12}} ({{this.data.drink.strMeasure12}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient13" (click)="searchByIngredient(this.data.drink.strIngredient13)">{{this.data.drink.strIngredient13}} ({{this.data.drink.strMeasure13}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient14" (click)="searchByIngredient(this.data.drink.strIngredient14)">{{this.data.drink.strIngredient14}} ({{this.data.drink.strMeasure14}})</span>
+            <span class="text ingredient" *ngIf="this.data.drink.strIngredient15" (click)="searchByIngredient(this.data.drink.strIngredient15)">{{this.data.drink.strIngredient15}} ({{this.data.drink.strMeasure15}})</span>
+            <span class="advice">Click an ingredient to search for drinks</span>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <span class="subtitle">Instructions:</span>
+        <span class="text">{{this.data.drink.strInstructions}}</span>
+    </div>
+</div>
+
+<div class="spinner_container" *ngIf="loading">
+    <mat-spinner class="custom-spinner"></mat-spinner>
+</div>

@@ -1,5 +1,5 @@
-export interface TaskInterface {
-    id: string;
+export interface DrinkInterface {
+    idDrink: string,
     strDrink: string;
     strCategory: string;
     strInstructions: string;

@@ -16,3 +16,14 @@
         }
     }
 }
+
+@media (max-width: 500px){
+    .footer_content{
+        font-size: 13px;
+    }
+
+    .menu_footer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
